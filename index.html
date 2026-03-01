@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ส่งข้อมูล</title>
+<style>
+body{
+  font-family: Arial;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+.card{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  width:300px;
+  text-align:center;
+}
+input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+}
+button{
+  width:100%;
+  padding:10px;
+  background:green;
+  color:white;
+  border:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>ส่งข้อมูลเข้าระบบ</h2>
+
+<form id="myForm">
+<input type="text" id="name" placeholder="ชื่อ" required>
+<input type="text" id="detail" placeholder="รายละเอียด" required>
+<input type="text" id="contact" placeholder="ติดต่อ" required>
+<button type="submit">ส่งข้อมูล</button>
+</form>
+
+</div>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+fetch("https://script.google.com/macros/s/AKfycbx_WDQU-nOnVML7vqABdR32TBKSO9YFgZvQf82mBTRKceO-UWv75wyTYOzoVvDFccFt/exec", {
+method: "POST",
+mode: "no-cors",
+headers: {
+  "Content-Type": "application/json"
+},
+body: JSON.stringify({
+name: document.getElementById("name").value,
+detail: document.getElementById("detail").value,
+contact: document.getElementById("contact").value
+})
+})
+.then(() => {
+alert("ส่งข้อมูลสำเร็จ ✅");
+document.getElementById("myForm").reset();
+})
+.catch(() => {
+alert("เกิดข้อผิดพลาด ❌");
+});
+});
+</script>
