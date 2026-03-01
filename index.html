@@ -24,9 +24,7 @@ body{
   box-shadow:0 15px 40px rgba(0,0,0,.3);
 }
 
-h2{
-  margin-bottom:15px;
-}
+h2{ margin-bottom:15px; }
 
 input{
   width:100%;
@@ -49,9 +47,7 @@ button{
   transition:.3s;
 }
 
-button:hover{
-  background:#15803d;
-}
+button:hover{ background:#15803d; }
 
 .success{
   display:none;
@@ -63,9 +59,7 @@ button:hover{
   font-weight:bold;
 }
 
-.contact{
-  margin-top:20px;
-}
+.contact{ margin-top:20px; }
 
 .contact a{
   display:block;
@@ -77,17 +71,9 @@ button:hover{
   color:white;
 }
 
-.fb{
-  background:#1877f2;
-}
-
-.msg{
-  background:#0084ff;
-}
-
-.call{
-  background:#0ea5e9;
-}
+.fb{ background:#1877f2; }
+.msg{ background:#0084ff; }
+.call{ background:#0ea5e9; }
 </style>
 </head>
 
@@ -114,7 +100,7 @@ button:hover{
 📘 เข้า Facebook
 </a>
 
-<a class="msg" href="https://m.me/" target="_blank">
+<a class="msg" href="https://m.me/1DUgDCm87d" target="_blank">
 💬 แชท Messenger
 </a>
 
@@ -140,7 +126,13 @@ detail: document.getElementById("detail").value
 })
 })
 .then(() => {
-document.getElementById("successMsg").style.display = "block";
+const msg = document.getElementById("successMsg");
+msg.style.display = "block";
+
+setTimeout(() => {
+  msg.style.display = "none";
+}, 3000);
+
 document.getElementById("myForm").reset();
 })
 .catch(() => {
